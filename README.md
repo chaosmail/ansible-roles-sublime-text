@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/chaosmail/ansible-roles-sublime-text.svg?branch=master)](https://travis-ci.org/chaosmail/ansible-roles-sublime-text)
+
 Sublime Text
 ============
 
