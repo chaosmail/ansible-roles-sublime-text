@@ -34,8 +34,9 @@
 
 - name: Install all custom packages
   git:
-    repo="{{ item.value }}"
-    dest="{{ sublime_packages_dir }}/{{ item.key }}"
-    accept_hostkey="yes"
-  with_dict: "{{ sublime_packages }}"
+    repo: "{{ item.name | default(item) }}"
+    version: "{{ item.version | default('HEAD') }}"
+    dest: "{{ sublime_packages_dir }}"
+    accept_hostkey: "yes"
+  with_items: "{{ sublime_packages }}"
   when: sublime_package_control
