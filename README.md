@@ -32,7 +32,6 @@ Configure sublime plugins that will be installed via `git` using the `sublime_pa
       - 'https://github.com/mitsuhiko/jinja2-tmbundle'
       - 'https://github.com/revolunet/sublimetext-markdown-preview'
       - 'https://github.com/SublimeLinter/SublimeLinter3.git'
-      - 'https://github.com/wbond/sublime_terminal.git'
       - 'https://github.com/Microsoft/TypeScript-Sublime-Plugin.git'
 
 Dependencies
