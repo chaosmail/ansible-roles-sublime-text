@@ -1,13 +1,13 @@
 ---
 # Install Sublime Text on Debian
 
-- name: "install HTTPS transport"
+- name: install HTTPS transport
   apt:
     name: "apt-transport-https"
     state: present
   become: true
 
-- name: "install git"
+- name: install git
   apt:
     name: "git"
     state: present

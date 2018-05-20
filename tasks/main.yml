@@ -6,33 +6,39 @@
 
 # Install Package Control
 
-- name: Check sublime Installed Package directory
-  stat: path="{{ sublime_installed_packages_dir }}"
+- name: check sublime Installed Package directory
+  stat:
+    path: "{{ sublime_installed_packages_dir }}"
   register: check_sublime_installed_packages_dir
   when: sublime_package_control
 
-- name: Create Installed Package directory
-  file: path="{{ sublime_installed_packages_dir }}" state=directory
+- name: create Installed Package directory
+  file:
+    path: "{{ sublime_installed_packages_dir }}"
+    state: directory
   when: check_sublime_installed_packages_dir.stat.exists == False
 
 - name: Install package control for sublime
   get_url: 
-    url="{{ sublime_package_control_url }}/Package%20Control.sublime-package"
-    dest="{{ sublime_installed_packages_dir }}/Package Control.sublime-package"
+    url: "{{ sublime_package_control_url }}/Package%20Control.sublime-package"
+    dest: "{{ sublime_installed_packages_dir }}/Package Control.sublime-package"
   when: sublime_package_control
 
 # Install & Configure Sublime Text Packages
 
-- name: Check sublime Package directory
-  stat: path="{{ sublime_packages_dir }}"
+- name: check sublime Package directory
+  stat:
+    path: "{{ sublime_packages_dir }}"
   register: check_sublime_packages_dir
   when: sublime_package_control
 
-- name: Create Package directory
-  file: path="{{ sublime_packages_dir }}" state=directory
+- name: create Package directory
+  file:
+    path: "{{ sublime_packages_dir }}"
+    state: directory
   when: check_sublime_packages_dir.stat.exists == False
 
-- name: Install all custom packages
+- name: install all sublime plugins
   git:
     repo: "{{ item.name | default(item) }}"
     version: "{{ item.version | default('HEAD') }}"
