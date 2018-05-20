@@ -25,5 +25,5 @@
 
 - name: install package
   apt:
-    pkg: "sublime={{ sublime_version }}*"
+    pkg: "sublime-text={{ sublime_version }}*"
     state: present
