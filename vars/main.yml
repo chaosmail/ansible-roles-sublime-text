@@ -1,7 +1,7 @@
 ---
 # vars file for sublime-text
 
-sublime_dir: "/home/{{ ansible_env.USER }}/.config/sublime-text-{{ sublime_version }}"
+sublime_dir: "{{ ansible_env.HOME }}/.config/sublime-text-{{ sublime_version }}"
 sublime_packages_dir: "{{ sublime_dir }}/Packages"
 sublime_installed_packages_dir: "{{ sublime_dir }}/Installed Packages"
 

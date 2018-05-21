@@ -3,7 +3,7 @@
 Sublime Text
 ============
 
-Ansible role to install sublime, package control and sublime plugins on CentOS or Ubuntu
+Ansible role to install sublime-text, package control and sublime-text plugins on CentOS or Ubuntu.
 
 Requirements
 ------------

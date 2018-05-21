@@ -19,7 +19,7 @@
   file:
     path: "{{ sublime_installed_packages_dir }}"
     state: directory
-  when: check_sublime_installed_packages_dir.stat.exists == False
+  when: sublime_package_control and check_sublime_installed_packages_dir.stat.exists == False
 
 - name: Install package control for sublime
   get_url: 
@@ -39,7 +39,7 @@
   file:
     path: "{{ sublime_packages_dir }}"
     state: directory
-  when: check_sublime_packages_dir.stat.exists == False
+  when: sublime_package_control and check_sublime_packages_dir.stat.exists == False
 
 - name: install all sublime plugins
   git:

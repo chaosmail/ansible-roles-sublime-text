@@ -1,30 +1,29 @@
 ---
 # Install Sublime-Text on RedHat
 
-- name: import rpm key (CentOS < 7)
-  rpm_key:
-    key: "http://{{ sublime_rpm_key }}"
+- name: install git
+  yum:
+    name: "git"
+    state: present
+  become: true
+  when: sublime_package_control
+
+- name: add repository (CentOS < 7).
+  yum_repository:
+    name: "{{ sublime_repo_name }}"
+    description: "{{ sublime_repo_desc }}"
+    baseurl: "http://{{ sublime_repo_url }}"
+    gpgkey: "http://{{ sublime_repo_key }}"
     state: present
   become: true
   when: ansible_distribution_major_version|int < 7
 
-- name: import rpm key (CentOS 7+)
-  rpm_key:
-    key: "https://{{ sublime_rpm_key }}"
-    state: present
-  become: true
-  when: ansible_distribution_major_version|int >= 7
-
-- name: add repositories (CentOS < 7).
-  yum:
-    name: "http://{{ sublime_rpm_url }}"
-    state: present
-  become: true
-  when: ansible_distribution_major_version|int < 7
-
-- name: add repositories (CentOS 7+).
-  yum:
-    name: "https://{{ sublime_rpm_url }}"
+- name: add repository (CentOS 7+).
+  yum_repository:
+    name: "{{ sublime_repo_name }}"
+    description: "{{ sublime_repo_desc }}"
+    baseurl: "https://{{ sublime_repo_url }}"
+    gpgkey: "https://{{ sublime_repo_key }}"
     state: present
   become: true
   when: ansible_distribution_major_version|int >= 7
@@ -32,5 +31,6 @@
 - name: install package
   yum:
     name: "sublime-text-{{ sublime_version }}*"
+    enablerepo: "{{ sublime_repo_name }}"
     state: present
   become: true
