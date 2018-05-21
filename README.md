@@ -13,8 +13,6 @@ This role is tested via Travis on following Platforms:
 - CentOS 6
 - Debian 8 (Jessie)
 - Debian 9 (Stretch)
-- Fedora 24
-- Fedora 27
 
 Requirements
 ------------

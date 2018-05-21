@@ -16,7 +16,7 @@ galaxy_info:
   # - CC-BY
   license: MIT
   
-  min_ansible_version: 1.4
+  min_ansible_version: 2.5
 
   # Optionally specify the branch Galaxy will use when accessing the GitHub
   # repo for this role. During role install, if no tags are available,
@@ -42,8 +42,8 @@ galaxy_info:
   #  - 6.0
   #  - 6.1
   #  - 6.2
-  - name: Fedora
-    versions:
+  # - name: Fedora
+  #  versions:
   #  - all
   #  - 16
   #  - 17
@@ -53,10 +53,10 @@ galaxy_info:
   #  - 21
   #  - 22
   #  - 23
-    - 24
+  #  - 24
   #  - 25
   #  - 26
-    - 27
+  #  - 27
   #  - 28
   #- name: DellOS
   #  versions:

@@ -9,9 +9,6 @@ addons:
       - docker-ce
 
 env:
-  - ROLE=sublime-text ANSIBLE=2.5 IMG=geerlingguy/docker-ubuntu1604-ansible
-  - ROLE=sublime-text ANSIBLE=1.4 IMG=geerlingguy/docker-ubuntu1604-ansible
-  - ROLE=sublime-text ANSIBLE=1.2 IMG=geerlingguy/docker-ubuntu1604-ansible
   - ROLE=sublime-text IMG=geerlingguy/docker-ubuntu1404-ansible
   - ROLE=sublime-text IMG=geerlingguy/docker-ubuntu1604-ansible
   - ROLE=sublime-text IMG=geerlingguy/docker-ubuntu1804-ansible
