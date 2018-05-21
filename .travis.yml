@@ -3,6 +3,11 @@ sudo: required
 
 language: python
 
+addons:
+  apt:
+    packages:
+      - docker-ce
+
 env:
   - ROLE=sublime-text IMG=geerlingguy/docker-ubuntu1404-ansible
   - ROLE=sublime-text IMG=geerlingguy/docker-ubuntu1604-ansible
@@ -16,6 +21,7 @@ services:
   - docker
 
 before_install:
+  - docker --version
   - docker pull $IMG
 
 script:
