@@ -25,9 +25,9 @@ before_install:
   - docker pull $IMG
 
 script:
-  - docker run -it -v $(pwd):/root/$ROLE \
-    -e ROLE=$ROLE -e ANSIBLE=$ANSIBLE \
-    $IMG /bin/sh /root/$ROLE/tests/run_test.sh
+  - docker run -it -v "$(pwd):/root/$ROLE" \
+    -e "ROLE=$ROLE" -e "ANSIBLE=$ANSIBLE" \
+    "$IMG" /bin/sh "/root/$ROLE/tests/run_test.sh"
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
