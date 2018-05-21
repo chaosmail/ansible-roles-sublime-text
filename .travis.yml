@@ -16,8 +16,6 @@ env:
   - ROLE=sublime-text IMG=geerlingguy/docker-centos7-ansible
   - ROLE=sublime-text IMG=geerlingguy/docker-debian8-ansible
   - ROLE=sublime-text IMG=geerlingguy/docker-debian9-ansible
-  - ROLE=sublime-text IMG=geerlingguy/docker-fedora24-ansible
-  - ROLE=sublime-text IMG=geerlingguy/docker-fedora27-ansible
 
 services:
   - docker
